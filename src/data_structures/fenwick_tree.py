@@ -16,6 +16,6 @@ class FenwickTree:
 
     def update(self, pos, val):
         pos += 1
-        while (pos < len(self.tree)):
+        while pos < len(self.tree):
             self.tree[pos] += val
             pos += (pos & -pos)
