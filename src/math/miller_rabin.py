@@ -13,13 +13,13 @@ def miller_rabin(n, k):
             return True
         if n % p == 0:
             return False
-    r, s = 0, n - 1
-    while s % 2 == 0:
+    r, d = 0, n - 1
+    while r % 2 == 0:
         r += 1
-        s //= 2
+        d //= 2
     for _ in range(k):
         a = randrange(2, n - 1)
-        x = pow(a, s, n)
+        x = pow(a, d, n)
         if x == 1 or x == n - 1:
             continue
         for _ in range(r - 1):
